@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS Includes-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="js/myfunctions.js"></script>
+    <script src="js/alertBox.js"></script>
+    <script src="js/validator.js"></script>
+    <title>Exercise 2 - Internet Programming Course template 2</title>
+</head>
+<!--------------------------------------------------------------------------------------------------------------------->
+<body>
+    <div class="container" >
+        <!--Image-->
+        <img  class="rounded mx-auto d-block w-100 img-fluid mt-4" src="/images/ToDoList.png" alt="">
+
+        <div class="d-flex justify-content-center">
+            <button type="button" class="m-2 btn btn-secondary" id="HeightPriority">Show High Priority</button>
+            <button type="button" class="m-2 btn btn-secondary" id="sortInput">Sort</button>
+        </div>
+        <div class="alert alert-secondary" role="alert">
+            <div class="alert alert-danger d-none" role="alert" id="alert_box"></div>
+            <!--Title-->
+                <div class="form-floating">
+                    <input class="form-control" id = 'TitleInput' />
+                    <label id="title">Title</label>
+                </div>
+            <!--Description-->
+            <div class="form-floating">
+                <textarea class=" mt-4 form-control" id = "description"></textarea>
+                <label id="desc">Description</label>
+            </div>
+            <!--Hight priority-->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                <label class="form-check-label" for="flexCheckIndeterminate" id="high">
+                    High Priority
+                </label>
+            </div>
+            <!--Add Button-->
+            <button type="button" class="btn btn-secondary btn-sm  mt-4" id="add">add</button>
+            <div class="card mt-4" style="width: 100%;">
+                <ul class="list-group list-group-flush " id="taskList"></ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        window.addEventListener('DOMContentLoaded',(event) => {
+            document.getElementById('add').addEventListener('click', todoList.addTask)
+        });
+        window.addEventListener('DOMContentLoaded',(event) => {
+            document.getElementById('HeightPriority').addEventListener('click', todoList.switchList)
+        });
+        window.addEventListener('DOMContentLoaded',(event) => {
+            document.getElementById('sortInput').addEventListener('click', todoList.Sort)
+        });
+        window.addEventListener('DOMContentLoaded',(event) => {
+            document.addEventListener('click', todoList.checkButton)
+        });
+    </script>
+    <!--Includes-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
